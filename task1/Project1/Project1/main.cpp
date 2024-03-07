@@ -1,12 +1,15 @@
-﻿#include <iostream>
-#include "Calculator.h"
+﻿#include "Calculator.h"
 
 
 int main(int argc, char** argv)
 {
-	setlocale(LC_ALL, "ru");
+	//setlocale(LC_ALL, "ru");
 	Calculator calc;
+	calc.set_num1(2);
+	calc.set_num2(3);
+	int pow_result = calc.pow();
 
+	/*
 	do
 	{
 		double num1 = 0;
@@ -32,7 +35,7 @@ int main(int argc, char** argv)
 
 		calc.set_num1(num1);
 		calc.set_num2(num2);
-		if (calc.hasError())
+		if (calc.has_error())
 		{
 			std::cout << "Error!" << std::endl;
 			continue;
@@ -52,6 +55,6 @@ int main(int argc, char** argv)
 			std::cout << "num2 / num1 = " << divide_2_1 << std::endl;
 		}
 
-	} while (true);
+	} while (true);*/
 	return 0;
 }

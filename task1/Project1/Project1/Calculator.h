@@ -2,9 +2,9 @@
 
 class Calculator
 {
-private:
-	double num1, num2;
 public:
+	double num1, num2;
+
 	double add();
 
 	double multiply();
@@ -21,8 +21,8 @@ public:
 
 	bool set_num2(double num2);
 
-	bool hasError();
+	bool has_error();
 
-	int pow_2(int x);
+	int pow();
 };
 
