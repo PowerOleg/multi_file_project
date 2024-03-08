@@ -1,28 +1,16 @@
-#pragma once
+#ifndef CALCULATOR_H
+#define CALCULATOR_H
+	double add(double num1, double num2);
 
-class Calculator
-{
-public:
-	double num1, num2;
+	double multiply(double num1, double num2);
 
-	double add();
+	double subtract_1_2(double num1, double num2);
 
-	double multiply();
+	double subtract_2_1(double num1, double num2);
 
-	double subtract_1_2();
+	double divide_1_2(double num1, double num2);
 
-	double subtract_2_1();
+	double divide_2_1(double num1, double num2);
 
-	double divide_1_2();
-
-	double divide_2_1();
-
-	bool set_num1(double num1);
-
-	bool set_num2(double num2);
-
-	bool has_error();
-
-	int pow();
-};
-
+	double pow(double num1, double num2);
+#endif

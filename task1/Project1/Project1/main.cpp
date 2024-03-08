@@ -1,60 +1,45 @@
-﻿#include "Calculator.h"
+﻿#include <iostream>
+#include "Calculator.h"
 
 
 int main(int argc, char** argv)
 {
-	//setlocale(LC_ALL, "ru");
-	Calculator calc;
-	calc.set_num1(2);
-	calc.set_num2(3);
-	int pow_result = calc.pow();
-
-	/*
-	do
+	setlocale(LC_ALL, "ru");
+	double num1 = 0;
+	std::cout << "Введите первое число: ";
+	std::cin >> num1;
+	double num2 = 0;
+	std::cout << "Введите второе число: ";
+	std::cin >> num2;
+	int operation = 0;
+	std::cout << "Выберите операцию(1 - сложение, 2 вычитание, 3 - умножение, 4 - деление, 5 - возведение в степень): ";
+	std::cin >> operation;
+	double result = 0;
+	switch (operation)
 	{
-		double num1 = 0;
-		std::cout << "Введите первое число:";
-		std::cin >> num1;
-		calc.set_num1(num1);
-		double num2 = 0;
-		std::cout << "Введите второе число: ";
-		std::cin >> num2;
-		calc.set_num2(num2);
-
-		std::cout << "Выберите операцию(1 - сложение, 2 вычитание, 3 - умножение, 4 - деление, 5 - возведение в степень): ";
-
-		std::cout << num1 << " " << num2 << std::endl;
-		double sum = calc.add();
-		double multiplication = calc.multiply();
-
-		double subtract_1_2 = calc.subtract_1_2();
-		double subtract_2_1 = calc.subtract_2_1();
-
-		double divide_1_2 = calc.divide_1_2();
-		double divide_2_1 = calc.divide_2_1();
-
-		calc.set_num1(num1);
-		calc.set_num2(num2);
-		if (calc.has_error())
-		{
-			std::cout << "Error!" << std::endl;
-			continue;
-		}
-		std::cout << "num1 + num2 = " << sum << std::endl;
-		std::cout << "num1 - num2 = " << subtract_1_2 << std::endl;
-		std::cout << "num2 - num1 = " << subtract_2_1 << std::endl;
-		std::cout << "num1 * num2 = " << multiplication << std::endl;
-		if (num1 == 0 && num2 == 0)
-		{
-			std::cout << "num1 / num2 = " << "Результат не определен" << std::endl;
-			std::cout << "num2 / num1 = " << "Результат не определен" << std::endl;
-		}
-		else
-		{
-			std::cout << "num1 / num2 = " << divide_1_2 << std::endl;
-			std::cout << "num2 / num1 = " << divide_2_1 << std::endl;
-		}
-
-	} while (true);*/
+	case 1:
+		result = add(num1, num2);
+		std::cout << num1 << " + " << num2 << " = " << result;
+		break;
+	case 2:
+		result = subtract_1_2(num1, num2);
+		std::cout << num1 << " - " << num2 << " = " << result;
+		break;
+	case 3:
+		result = multiply(num1, num2);
+		std::cout << num1 << " * " << num2 << " = " << result;
+		break;
+	case 4:
+		result = divide_1_2(num1, num2);
+		std::cout << num1 << " / " << num2 << " = " << result;
+		break;
+	case 5:
+		result = pow(num1, num2);
+		std::cout << num1 << " в степени " << num2 << " = " << result;
+		break;
+	default:
+		std::cout << "Неверный ввод";
+		break;
+	}
 	return 0;
 }
